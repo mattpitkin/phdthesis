@@ -1,0 +1,87 @@
+% Abstract file
+
+% split into two sections of abstract and declaration
+
+\newpage
+%\makeatletter
+%\vspace*{-50\p@} % makeschapterhead starts with a vspace of 50pt
+%\@makeschapterhead{Summary and declaration}
+\chapter*{Declaration}
+%\makeatother
+This thesis presents upper limit results on the strength of gravitational waves from known neutron
+stars using data from the LIGO and \geo interferometric \gw detectors as part of the LIGO Scientific
+Collaboration (LSC). This work was performed as part of the LSC, and as such much work has been done
+by a great many people in building and maintaining the detectors, obtaining and characterising the
+data, and developing software components that we have used. Below I provide a summary of the work
+performed by myself with reference to that of others.
+
+The first chapter describes the basic theory behind gravitational radiation and summarises some of
+the properties of \gw sources. A brief description is given of interferometric \gw detectors,
+including their major noise sources. A summary of the previous searches performed by the LSC is
+given along with some of the main results.
+
+Chapter 2 describes neutron stars and their potential as sources of continuous gravitational
+waves. A description of the search algorithm and Bayesian parameter estimation technique, as
+developed by Dupuis and Woan \cite{DupuisWoan:2005}, is provided. New to this thesis are
+descriptions of techniques to deal with pulsar timing noise and pulsars in binary systems. These
+have been developed by myself and Graham Woan, with the software being validated and checked by
+myself. The binary software has made use of the pulsar timing software \tempo \cite{TEMPO}.
+Verification of the code has relied greatly on information provided to us by Michael Kramer of
+Jodrell Bank Observatory.
+
+In Chapter 3 the results of searches for \gws from 93 known pulsars using data from the LSC S3
+and S4 science runs are presented. Many of the pulsar timing parameters were supplied by Michael
+Kramer and Andrew Lyne of Jodrell Bank Observatory, and the Australia Telescope National Facility
+pulsar catalogue. I describe the selection of pulsars used in the analysis, noting errors on the
+pulsars parameters and for the first time discussing the possible effects of timing noise on our
+analysis for all pulsars. Results for 65 of these pulsars have never before been obtained. The S3
+and S4 analyses have been performed by myself and include the new method of combining the two data
+sets for a single analysis, with all the results, in terms of upper limits on \gw amplitude and
+pulsar ellipticity, presented here. I suggest a method of displaying some results on a moment of
+inertia-ellipticity plane, thus providing an exclusion region in this parameter space. 
+
+In Chapter 4 the emission of gravitational waves from quasi-normal modes ring-downs of neutron
+stars is discussed. Also discussed is the generation of such modes from neutron star glitches. I
+present a preliminary search for \gw ring-down signals from the magnetar SGR\,1806-20 during a
+giant flare on 27$^{\rm th}$ December 2004. For our search I describe and make use of matched
+filtering software developed by Jolien Creighton and others, but which had otherwise never been used
+for neutron star ring-down searches. I also describe a search method developed by myself and
+Graham Woan based on Bayesian evidence, by making use work of Bretthorst \cite{Bretthorst:1988}.
+
+Chapter 5 describes the future of both these searches and prospects for the latest science run.
+
+\newpage
+
+\chapter*{Abstract}
+We have used data from the third and fourth science runs of the laser interferometric
+gravitational wave detectors LIGO and \geo to produce upper limits on the emission of \gws from a
+selection of known neutron stars. Two different emission mechanisms are looked into; i) the
+emission of continuous \gws from triaxial neutron stars; and ii) emission of quasi-normal mode
+ring-downs from glitching neutron stars.
+
+We have produced upper limits on the gravitational wave amplitude and ellipticity for 93 known
+pulsars assuming continuous emission via triaxiality. This selection of pulsars includes the
+majority of currently known pulsars with frequencies $> 25$\,Hz, with many within binary systems and
+globular clusters. New algorithms to take into account the motions within binary systems and
+possible effects of pulsar timing noise are presented. Also shown is the first analysis to combine
+the data sets from two distinct science runs as a method of lowering the upper limits. The results
+are starting to push into the range of plausible neutron star ellipticities, with the Crab pulsar
+closely approaching the limit that can be set through spin-down arguments. For the 32 of these
+pulsars in globular clusters the results provide upper limits independent of the cluster dynamics.
+The astrophysical significance of these results is discussed. Along with results from true pulsars
+we also present the extraction of simulated signals injected into the interferometers during the
+science runs. These provide validation checks of both the extraction software and the coherence of
+the detectors.
+
+Two techniques are discussed in relation to searching for quasi-normal mode ring-down signals from
+excited neutron stars, for example during a glitch; one based on matched filtering and the other
+based on Bayesian evidence. These are both applied to a search for such a signal from SGR\,1806-20
+during a GRB on 27$^{\rm th}$ December 2004, using the LIGO H1 detector and \geo data. This search
+provided upper limits on the energy released in \gws via quasi-normal modes over the range of
+frequencies from 1-4\,kHz. These are compared with results from a previous search using the bar
+detector AURIGA \cite{Baggio:2005} and theoretical arguments. The limitations of the search and
+search techniques, and possible extensions to these, are discussed.
+
+The future of these searches is discussed with regard to extensions to the analysis techniques and
+number of potential sources. Particular emphasis is placed on searches using data from the current
+LSC S5 science run.

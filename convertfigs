@@ -1,0 +1,23 @@
+#! /bin/bash
+
+# script to convert all .eps files in the current directory to pdf files using epstopdf
+# if the pdf file already exists don't reconvert though - saves time
+
+filelist=`ls figs/*`
+
+for arg in $filelist; do
+	# find position of of '.'
+	dotpos=`expr index "$arg" .` 
+	fname=`expr substr $arg 1 $dotpos`
+	newname=$fname"pdf"
+	
+	fileext=${arg: -3}
+		
+	# if pdf file does not already exist then make it
+	if [ $fileext = "eps" -a ! -e "$newname" ]; then
+		echo Convert $arg to $newname
+		epstopdf $arg
+	fi
+done
+
+exit $#

@@ -1,0 +1,121 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Matthew Pitkin 25/04/05                                  %
+%                                                          %
+% PhD Thesis - yep, really it is                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\documentclass[12pt,a4paper,oneside,openright]{report}
+
+% work out if pdflatex or latex being used for compiling
+\ifx\pdftexversion\undefined
+  \usepackage[dvips]{graphicx}
+\else
+  \usepackage[pdftex]{graphicx}
+\fi
+
+\usepackage{geometry}\geometry{a4paper, left=3.5cm, width=15.5cm, top=2.5cm, bottom=2.5cm}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{color}
+\usepackage{epsfig}
+\usepackage{epsf}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{latexsym}
+
+\usepackage{caption}
+\captionsetup{textfont=footnotesize}
+
+\pagestyle{fancy}
+
+% header and footer stuff
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter:\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection:\ #1}}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO]{\rightmark}
+\fancyhead[RE]{\leftmark}
+\fancypagestyle{plain}{%
+   \fancyhead{} %
+   \renewcommand{\headrulewidth}{0pt} %
+}
+
+\newcommand{\ee}[1]{\!\times\!10^{#1}}
+\newcommand{\gws}{gravitational waves~}
+\newcommand{\gw}{gravitational wave~}
+\newcommand{\geo}{G\textsc{eo}\,600~}
+\newcommand{\tempo}{T\textsc{empo}~}
+\newcommand{\ifo}{interferometer~}
+
+\makeatletter
+
+\let\oldmakechapterhead=\@makechapterhead
+\global\def\@chapquotetext{}
+\global\def\@chapquoteauthor{}
+
+\def\@makechapterhead#1{
+\hfill\begin{minipage}{0.9\textwidth}
+\it \small \raggedleft \@chapquotetext \if\@chapquoteauthor\empty\else\\\fi \rm
+\@chapquoteauthor
+\global\def\@chapquotetext{}
+\global\def\@chapquoteauthor{}
+\end{minipage}
+
+\oldmakechapterhead{#1}
+}
+
+\newcommand{\chapquote}[2]{\global\def\@chapquotetext{#1}\global\def\@chapquoteauthor{#2}}
+
+%\title{Gravitational waves are out there, somewhere}
+%\title{Searches for gravitational waves from known neutron stars}
+\title{Searches for continuous and transient gravitational waves from known neutron stars and
+their astrophysical implications}
+
+\author{Matthew David Pitkin \\ \\ \\ Department of Physics and Astronomy \\
+University of Glasgow \\ \\ \\ \\ \\ \\ \\ \\ \\ Presented as a thesis for the degree of Ph.D. \\ in
+the University of Glasgow, University Avenue, \\ Glasgow, G12 8QQ. \\ \\ \\ \\ \\ \\ \copyright~ M.
+Pitkin, February 2006}
+
+\date{}
+
+\begin{document}
+\pagenumbering{roman}
+\maketitle
+
+\doublespacing
+\begin{flushright}
+Professor Hubert Farnsworth: {\it It's a little experiment that might win me the Nobel Prize.} \\
+Leela: {\it In which field?} \\
+Professor Hubert Farnsworth: {\it I don't care - they all pay the same.}\\
+{\textbf Futurama}
+\end{flushright}
+\input acknowledge.tex
+\input abstract.tex
+\newpage
+
+\pagenumbering{arabic}
+\tableofcontents
+\listoffigures
+\listoftables
+
+\input chapter1.tex
+
+\input chapter2.tex
+
+\input chapter3.tex
+
+\input chapter4.tex
+
+\input chapter5.tex
+
+%\input appendixa.tex
+
+\newpage
+
+\bibliography{thesis}
+\bibliographystyle{unsrt}
+
+\end{document}

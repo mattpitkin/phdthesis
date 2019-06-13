@@ -1,0 +1,117 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Matt Pitkin 26/04/05                                      %
+%                                                           %
+% Chapter 5: Give me a "C"! Give me an "O", etc etc         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\chapquote{Perfection is the destination, imperfection is the journey}{Derek Smalls - This is
+%Spinal Tap}
+\chapquote{You win again, gravity.}{Captain Zapp Brannigan - Futurama}
+
+\chapter{Future work}
+The present status of the ongoing search for \gws is that no evidence has yet been seen for their
+direct detection. Despite this pessimistic sounding statement we are still advancing ever closer
+towards the first direct sighting. In the meantime we are reaching the point where interesting
+astrophysics can be gained from our null results. Upper limits on various emission mechanisms and
+event rates can begin to constrain theoretical models of sources and population studies.
+
+This thesis has given the current status of the search for \gws from a selection of known neutron
+stars via two different mechanisms. This, however, is not the end state of each search, with much
+more work continuing in the future. 
+
+\section{The known pulsar search}
+One of the first things to be noted is that here we have searched for 93 known pulsars, this being
+the number for which adequate timing solutions were available. There are currently 150 pulsars
+within our band, with more being discovered from radio surveys on a regular basis. This will
+increase our search sample and hopefully provide some candidates with more promising detection
+possibilities i.e. young pulsars with high spin-down rates. We are in close contact with radio
+astronomers to get the most up-to-date timing solutions possible, although obviously timing
+observations from the time of a science run can only be used in a post-run analysis. As we have
+seen from their inferred spin-down upper limits the {\it known} radio pulsars are not the best
+candidates for \gw detection. There are, however, several pulsars only seen in X-rays which
+might provide better candidates, for example PSR\,J0537-6910 described in
+\S\ref{PSRJ0537-6910section}. With several space-based high energy telescopes (the {\it Rossi X-ray
+Timing Explorer}, {\it Chandra}, {\it XMM-Newton} and {\it INTEGRAL}) currently operating, X-ray
+pulsars, mainly those in LMXB systems, are becoming a far more studied source. These provide more
+enticing candidates, with conditions for sustaining \gw emission being more favourable. Other
+enticing places to search are SNRs, with Veitch {\it et al.} (2005) \cite{Veitch:2005} developing a
+search for a possible remnant of SN\,1987A. Due to the many X-ray pulsars and other potential
+sources having far less well defined, or unknown, parameters than many radio pulsars, a search as
+performed in this thesis would be inadequate. The MCMC search for \gws from a SN\,1987A remnant in
+\cite{Veitch:2005} could, for instance, be extended to search over binary parameters and used in
+LMXB searches.
+
+% refinements to heterodyne algorithm
+The search algorithm, as it is currently used by performing a single fine grained heterodyne at the
+exact pulsar phase, is computationally fairly slow. The main speed restriction on this is having to
+compute the Doppler correction to the SSB (and binary system barycentre for some) for every data
+sample. This will only get slower as more pulsars are included. The speed of the algorithm also
+becomes a problem if the data has to be re-analysed many times, for example if certain data segments
+were missed or new calibration data is used. One possible method to reduce the computational burden
+of the search, and more easily allow repeated analysis, would be to return to a two stage heterodyne
+process similar to that used in the S1 pulsar search \cite{Abbott:2004}. This performed an initial
+heterodyne at the pulsar frequency, but did not include spin-down or Doppler corrections, allowing
+the data to be massively down-sampled and filtered before the finer corrections were applied in a
+second heterodyne. There are some limitations on this, in that the down-sampling and filtering must
+be able to accommodate the frequency range drift caused by Doppler motions, with particular care for
+binary pulsars, although going from 16\,384\,Hz to 1\,Hz would still provide plenty of range. In
+practice a less crude initial heterodyne using as many parameters as possible can also be used. This
+would mean that during the course of a science run the initial heterodyne can still be performed
+using older timing solutions, and then the second stage heterodyne used to perform additional phase
+corrections when up-to-date timing information is made available - this is essentially what is done
+for the Crab pulsar with regards to timing noise corrections. 
+
+The heterodyne approach may well be phased out in the longer term. When there are many pulsars
+across a wide range of frequencies a more sensible approach may be to use Fourier transforms of the
+data, which essentially provide a fixed frequency heterodyne over all frequencies. Short time
+baseline Fourier transforms (SFTs) of the data for LIGO and \geo are already produced for the
+frequency domain pulsar searches and could be used for our purposes. The SFTs need to be short
+enough that the source's signal is not spread out over many frequency bins due to Doppler/spin-down
+effects. Under such an approach the exact frequency of the source would be calculated and
+extrapolated between successive frequency bins. This cuts down the problem computationally, as
+the SFTs are pre-produced and the frequency only needs to be calculated at the rate of the time
+baseline of the SFTs.
+
+% refinements to marginalisation - analytical or approximations to analytical solutions
+The marginalisation in equation~\ref{margoverall} used in the Bayesian parameter estimation
+currently numerically sums over the nuisance parameters. The grid over which the marginalisation
+takes place is limited by computer memory restraints, so the integration is only approximate. The
+possibility of performing these integrals analytically needs to be explored.
+
+\section{The ring-down search}
+The ring-down search presented in this thesis is in a very preliminary state and was more about
+outlining and testing the algorithms than producing a full and thorough search pipeline. Much of
+what needs to be done is outlined at the end of Chapter~4. The particular case of the search for a
+signal from the $27^{\rm th}$ December GRB needs a more thorough study of event background rates
+and the coincidence analysis. When the evidence based search becomes more stable against spectral
+lines it will be provide a good complementary strategy to the matched filtering search. There are
+other glitches from the Crab and Vela pulsars to be searched for.
+
+With S5 starting and providing an almost continuous data set for a year or so, it provides the
+opportunity to catch as many glitches as we can. With pulsars such as the Crab, Vela and J0537-6910
+being prolific glitchers there should be several events during the run. As with the known pulsar
+continuous wave search, the timing for these glitches can only be obtained post-event. This will
+again need close cooperation with those observing the pulsars to obtain accurate information as
+soon as possible. Glitches seen in accreting X-ray pulsars provide an excellent target, with
+fractional frequency changes seen up to $\Delta\nu/\nu \sim 3\ee{-4}$ for one such object
+(SAX~J2103.5+4545) \cite{Stark:2004} being two orders of magnitude above the maximum seen in Vela
+glitches. Another good accreting X-ray potential target is KS 1947+300 which had a glitch of
+fractional frequency change at $\Delta\nu/\nu \sim 4\ee{-5}$ \cite{Galloway:2004}.
+
+\section{S5 and beyond}
+The fifth science run (S5) of the LSC interferometers started officially on $4^{\rm th}$ November
+2005, with H1 and H2 to start with, and L1 and \geo joining later. This run marks the start of full
+time operation of the interferometers at approximately their design sensitivities. This should give
+sensitivities to pulsars at around that given in figure~\ref{h0results}, and allow us to beat the
+spin-down upper limits for at least the Crab pulsar by approximately an order of magnitude.
+
+Towards the end of the decade LIGO will be decommissioned and upgrades to Advanced LIGO installed.
+This should give access to many more potential sources and beat the spin-down limits for many
+pulsars. Possible upgrades to \geo to tune it to the high frequencies could provide a good window
+to look at oscillation modes of neutron stars, with possibilities extending beyond the fundamental
+$f$-mode. This would perhaps be able to spot high frequency oscillations from newborn neutron stars
+to a large distance.
+
+Hopefully \gw astronomy will soon be able to provide much needed insight into the structure and
+nature of neutron stars, which is currently open to much speculation. This will be complimentary
+to electromagnetic studies, but should provide a wealth of unique information.
